@@ -1,0 +1,23 @@
+version: '3'
+services:
+  xxl-job-admin:
+    image: xxl-job-admin
+    container_name: xxl-job-admin
+    ports:
+      - 8090:8090
+#    volumes:
+#      - D:\BackEndProject\mall-swarm-master\document\docker\mydata\app\mall-search\logs:/var/logs
+#      - D:\BackEndProject\mall-swarm-master\document\docker\mydata\etc\localtime:/etc/localtime
+    environment:
+      - 'TZ="Asia/Shanghai"'
+
+  xxl-job-executor-sample-springboot:
+    image: xxl-job-executor-sample-springboot
+    container_name: xxl-job-executor-sample-springboot
+    ports:
+      - 8091:8091
+    #    volumes:
+    #      - D:\BackEndProject\mall-swarm-master\document\docker\mydata\app\mall-admin\logs:/var/logs
+    #      - D:\BackEndProject\mall-swarm-master\document\docker\mydata\etc\localtime:/etc/localtime
+    environment:
+      - 'TZ="Asia/Shanghai"'
