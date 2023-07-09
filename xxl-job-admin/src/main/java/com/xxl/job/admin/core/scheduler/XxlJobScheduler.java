@@ -29,6 +29,7 @@ public class XxlJobScheduler  {
         JobTriggerPoolHelper.toStart();
 
         // admin registry monitor run
+//        维护注册表信息(30秒执行一次)
         JobRegistryHelper.getInstance().start();
 
         // admin fail-monitor run

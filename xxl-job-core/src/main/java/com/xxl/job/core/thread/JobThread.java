@@ -176,6 +176,7 @@ public class JobThread extends Thread{
 								:tempHandleMsg;
 						XxlJobContext.getXxlJobContext().setHandleMsg(tempHandleMsg);
 					}
+//					执行器执行结果写入日志
 					XxlJobHelper.log("<br>----------- xxl-job job execute end(finish) -----------<br>----------- Result: handleCode="
 							+ XxlJobContext.getXxlJobContext().getHandleCode()
 							+ ", handleMsg = "
@@ -207,6 +208,7 @@ public class JobThread extends Thread{
                     // callback handler info
                     if (!toStop) {
                         // commonm
+//						执行结果上报
                         TriggerCallbackThread.pushCallBack(new HandleCallbackParam(
                         		triggerParam.getLogId(),
 								triggerParam.getLogDateTime(),

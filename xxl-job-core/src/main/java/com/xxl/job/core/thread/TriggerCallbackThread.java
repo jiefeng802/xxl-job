@@ -33,6 +33,7 @@ public class TriggerCallbackThread {
 
     /**
      * job results callback queue
+     * 回调给admin
      */
     private LinkedBlockingQueue<HandleCallbackParam> callBackQueue = new LinkedBlockingQueue<HandleCallbackParam>();
     public static void pushCallBack(HandleCallbackParam callback){
@@ -63,6 +64,7 @@ public class TriggerCallbackThread {
                 // normal callback
                 while(!toStop){
                     try {
+//                         移除并返回队列头部的元素。如果队列为空，则阻塞
                         HandleCallbackParam callback = getInstance().callBackQueue.take();
                         if (callback != null) {
 

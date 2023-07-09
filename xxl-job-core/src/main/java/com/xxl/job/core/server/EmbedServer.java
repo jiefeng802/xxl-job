@@ -161,6 +161,7 @@ public class EmbedServer {
                     String responseJson = GsonTool.toJson(responseObj);
 
                     // write response
+//                    放入triggerqueue就返回
                     writeResponse(ctx, keepAlive, responseJson);
                 }
             });

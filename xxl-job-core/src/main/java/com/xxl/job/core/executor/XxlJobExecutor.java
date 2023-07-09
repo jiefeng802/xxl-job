@@ -81,6 +81,7 @@ public class XxlJobExecutor  {
         TriggerCallbackThread.getInstance().start();
 
         // init executor-server
+//        注册到服务端(心跳30S)
         initEmbedServer(address, ip, port, appname, accessToken);
     }
 
