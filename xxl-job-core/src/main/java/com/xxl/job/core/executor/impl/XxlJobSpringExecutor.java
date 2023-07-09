@@ -117,6 +117,9 @@ public class XxlJobSpringExecutor extends XxlJobExecutor implements ApplicationC
                 Method executeMethod = methodXxlJobEntry.getKey();
                 XxlJob xxlJob = methodXxlJobEntry.getValue();
                 // regist
+//                xxlJob：注解
+//                bean：类
+//                executeMethod：方法
                 registJobHandler(xxlJob, bean, executeMethod);
             }
 

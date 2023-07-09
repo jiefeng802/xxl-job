@@ -25,21 +25,26 @@ public class XxlJobScheduler  {
         initI18n();
 
         // admin trigger pool start
+//        创建线程池
         JobTriggerPoolHelper.toStart();
 
         // admin registry monitor run
         JobRegistryHelper.getInstance().start();
 
         // admin fail-monitor run
+//        监控失败的任务并重试，发送 失败的任务详情 到邮箱
         JobFailMonitorHelper.getInstance().start();
 
         // admin lose-monitor run ( depend on JobTriggerPoolHelper )
+//        监控执行超时10min的任务，标记为丢失
         JobCompleteHelper.getInstance().start();
 
         // admin log report start
+//        清理过期日志。更新每分钟的日志报告log_report，包括成功，失败，正在运行的日志
         JobLogReportHelper.getInstance().start();
 
         // start-schedule  ( depend on JobTriggerPoolHelper )
+//        查询出下次执行时间在未来5秒以内的所有任务
         JobScheduleHelper.getInstance().start();
 
         logger.info(">>>>>>>>> init xxl-job admin success.");

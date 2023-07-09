@@ -84,6 +84,7 @@ public class JobTriggerPoolHelper {
         }
 
         // trigger
+//        调用execute方法默认不会阻塞当前线程
         triggerPool_.execute(new Runnable() {
             @Override
             public void run() {
